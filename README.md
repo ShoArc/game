@@ -65,11 +65,83 @@ def option_1():
     print_slow("You see a dim yellow light flickering far away.")
     print("1. Go towards the light.")
     print("2. Walk around more away from the light.")
+    print("Press 'f' to toggle flashlight (if available).")
+
+    choice = input("Enter your choice (1, 2, or f): ")
+    if choice == '1':
+        option_1a()
+    elif choice == '2':
+        option_1b()
+    elif choice.lower() == 'f':
+        if flashlight_on:
+            turn_off_flashlight()
+        else:
+            turn_on_flashlight()
+    else:
+        print("Invalid choice. Please enter either 1, 2, or f.")
+
+def option_1a():
+    print_slow("You slowly walk towards the light and you hear a distant static voice.")
+    print_slow("You reach the light and listen closely... The voice... The voice is coming from the door under that yellow flickering light.")
+    print("1. Go inside the room.")
+    print("2. Turn around and look for a different path.")
+    print("Press 'f' to toggle flashlight (if available).")
+
+    choice = input("Enter your choice (1, 2, or f): ")
+    if choice == '1':
+        option_1aa()
+    elif choice == '2':
+        option_1ab()
+    elif choice.lower() == 'f':
+        if flashlight_on:
+            turn_off_flashlight()
+        else:
+            turn_on_flashlight()
+    else:
+        print("Invalid choice. Please enter either 1, 2, or f.")
+
+def option_1aa():
+    print_slow("You walk in and find a table on which a red light is blinking.")
+    print_slow("Your eyes adjust to the dark and you see a radio and a torch and 2 batteries.")
+    print("1. Pick the radio and the flashlight.")
+    print("Press 'f' to toggle flashlight (if available).")
+
+    choice = input("Enter your choice (1 or f): ")
+    if choice == '1':
+        # Implement picking up radio and flashlight
+        print("You picked up the radio and flashlight.")
+    elif choice.lower() == 'f':
+        if flashlight_on:
+            turn_off_flashlight()
+        else:
+            turn_on_flashlight()
+    else:
+        print("Invalid choice. Please enter either 1 or f.")
+
+def option_1ab():
+    print_slow("You decide to walk around more in the dark...")
+    # Add more storyline here if needed
+
+def option_1b():
+    print_slow("You walk around more away from the light...")
+    # Add more storyline here if needed
 
 def option_2():
     print_slow("You sit down and gather your thoughts.")
     print_slow("Trying to remember how you got here...")
     print("1. Walk Around.")
+    print("Press 'f' to toggle flashlight (if available).")
+
+    choice = input("Enter (1 or f): ")
+    if choice == '1':
+        option_1()
+    elif choice.lower() == 'f':
+        if flashlight_on:
+            turn_off_flashlight()
+        else:
+            turn_on_flashlight()
+    else:
+        print("Invalid choice. Please enter either 1 or f.")
 
 def main():
     print_slow("You are trapped alone in a basement of a parking lot.")
@@ -79,6 +151,7 @@ def main():
     print_slow("You get up and look around and you get a gut feeling that something ain't right.")
     print("1. Walk Around.")
     print("2. Stay where you are.")
+    print("Press 'f' to toggle flashlight (if available).")
 
     # Start the input handling thread
     input_thread = threading.Thread(target=handle_input)
@@ -100,4 +173,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
